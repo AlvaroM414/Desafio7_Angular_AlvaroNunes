@@ -1,0 +1,22 @@
+<!-- Botão Hamburger -->
+<button class="btn btn-primary hamburger-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+  aria-controls="offcanvasExample" aria-label="Abrir menu">
+  <i class="fas fa-bars"></i>
+</button>
+
+<!-- Offcanvas -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <div>
+      <img src="../assets/img/ford.png" alt="logo-ford" class="logo">
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <button class="btn btn-primary w-100 mb-3" (click)="goToHome()">Home</button>
+    
+    <button class="btn btn-primary w-100" (click)="goToDashboard()">Dashboard</button>
+
+    <button class="btn btn-primary w-100 mt-3" (click)="goToLogin()">Sair</button>
+  </div>
+</div>

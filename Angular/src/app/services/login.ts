@@ -1,0 +1,22 @@
+import { inject, Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { UserInfo } from 'os';
+import { Usuario } from '../models/user';
+import { Observable, tap } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class Login {
+  http =  inject(HttpClient);
+
+  login(nome: string, senha: string): Observable<Usuario> {
+    return this.http.post<Usuario>('http://localhost:3001/login', { nome, senha })
+    .pipe(
+      tap((user) => {
+        sessionStorage.setItem('email', user.email);
+      })
+    );
+  }
+
+}

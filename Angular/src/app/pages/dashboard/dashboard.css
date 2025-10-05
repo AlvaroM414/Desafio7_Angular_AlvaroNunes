@@ -1,0 +1,72 @@
+/* Estilo global */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+   
+}
+
+h1 {
+    color: #333;
+    font: bold 2rem Arial, sans-serif;
+    font-size: 30px;
+    color: blue;
+}
+
+
+.card-principal {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px; /* Largura fixa para manter a proporção */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-principal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-principal h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+.todos-cads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10%;
+    justify-content: center;
+    padding: 20px;
+}
+
+.form-select {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: 1px solid #cccccc;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.form-select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+.img-vehicle{
+    text-align: center;
+    width:45%; /* Largura total do contêiner */
+}
+.tablefixed {
+    width: 100%;
+    overflow-x: auto; /* Permite rolagem horizontal se necessário */
+    flex: 1; /* Permite que a tabela ocupe o espaço restante */
+}
+
+

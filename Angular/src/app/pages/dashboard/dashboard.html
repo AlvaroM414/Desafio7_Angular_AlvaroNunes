@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="menu">
+        <app-menu-lateral />
+        <h1 class="d-flex justify-content-center"> Dashboard FORD </h1>
+        <br>
+    </div>
+
+
+    <!-- Seção 1: Cards principais -->
+    <section class="todos-cads">
+        <div class="card-principal">
+            <h2>Veículos</h2>
+            <hr>
+            <select class="form-select" (change)="onSelectVeiculo($event)">
+                @for (v of veiculos; track v.id) {
+                <option value="{{ v.id }}">{{ v.vehicle }}</option>
+                }
+            </select>
+        </div>
+
+        <!-- Cards dinâmicos -->
+        <app-card [title]="'Total de Vendas'" [valor]="veiculoSelected.volumetotal"></app-card>
+        <app-card [title]="'Conectados'" [valor]="veiculoSelected.connected"></app-card>
+        <app-card [title]="'Update Software'" [valor]="veiculoSelected.softwareUpdates"></app-card>
+    </section>
+
+    <!-- Seção 2: Imagem do veículo -->
+    <section class="d-flex justify-content-center ">
+        <img src="{{veiculoSelected.img}}" alt="Veículo Selecionado" class="img-vehicle">
+    </section>
+
+    <!-- Seção 3: Tabela de informações -->
+    <section class="tablefixed">
+        <app-car-table [vin]="veiculoSelected.vin" [lat]="vinInfos.lat" [long]="vinInfos.long" [km]="vinInfos.odometro"
+            [nivelCombustivel]="vinInfos.nivelCombustivel" [status]="vinInfos.status">
+        </app-car-table>
+    </section>
+
+</div>
